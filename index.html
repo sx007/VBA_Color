@@ -41,11 +41,11 @@ myColor.addEventListener("input",(event)=>{
 
 function myFunction() {
     var x = document.getElementById("myColor").value;
-    document.getElementById("hex").innerHTML = x;
+    document.getElementById("hex").innerHTML = x.toUpperCase();
     document.getElementById("r").innerHTML = hexToRgb(x).r;
     document.getElementById("g").innerHTML = hexToRgb(x).g;
     document.getElementById("b").innerHTML = hexToRgb(x).b;
-    document.getElementById("bс").innerHTML = hexToBackColor(x);
+    document.getElementById("bс").innerHTML = hexToBackColor(x).toUpperCase();
 }
 
 function hexToRgb(hex) {

@@ -1,7 +1,7 @@
 # VBA_Color
 Color-coded help table in VBA
 
-#Demo
+# Demo
 <a href="https://sx007.github.io/vba_color/">sx007.github.io/vba_color</a>
 
 

@@ -2,7 +2,7 @@
 Color-coded help table in VBA
 
 # Demo
-<a href="https://sx007.github.io/vba_color/">sx007.github.io/vba_color</a>
+<a href="https://sx007.github.io/VBA_Color/">sx007.github.io/VBA_Color</a>
 
 
 Для удобства работы с VBA цветами (базовыми) ColorIndex, HTML код, RGB, и BackColor.

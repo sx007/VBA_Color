@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Help vba BackColor</h3>
+<p><b>Note:</b> type="color" is not supported in Internet Explorer 11 and earlier versions or Safari 9.1 and earlier versions.</p>
+
+
+<table>
+    <tbody>
+    <tr>
+        <td colspan="2">Select color: <input type="color" id="myColor" value="#000000"></td>
+    </tr>
+    <tr>
+        <td>HEX:</td>
+        <td><p id="hex">&nbsp;</p></td>
+    </tr>
+    <tr>
+        <td>R:</td>
+        <td><p id="r">&nbsp;</p></td>
+    </tr>
+    <tr>
+        <td>G:</td>
+        <td><p id="g">&nbsp;</p></td>
+    </tr>
+    <tr>
+        <td>B:</td>
+        <td><p id="b">&nbsp;</p></td>
+    </tr>
+    <tr>
+        <td>BackColor:</td>
+        <td><p id="bс">&nbsp;</p></td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+myColor.addEventListener("input",(event)=>{
+    myFunction();
+});
+
+function myFunction() {
+    var x = document.getElementById("myColor").value;
+    document.getElementById("hex").innerHTML = x;
+    document.getElementById("r").innerHTML = hexToRgb(x).r;
+    document.getElementById("g").innerHTML = hexToRgb(x).g;
+    document.getElementById("b").innerHTML = hexToRgb(x).b;
+    document.getElementById("bс").innerHTML = hexToBackColor(x);
+}
+
+function hexToRgb(hex) {
+    var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+    hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+        return r + r + g + g + b + b;
+    });
+
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
+
+function hexToBackColor(hex) {
+    var h = hex.replace('#', '');
+    var r = h.substr(0, 2);
+    var g = h.substr(2, 2);
+    var b = h.substr(4, 2);
+    return "&H00" + b + g + r + "&" 
+}
+</script>
+
+</body>
+</html>
